@@ -1,1 +1,13 @@
 c:\users\christianjavier\documents\visual studio 2012\Projects\BlocksWorld\BlocksWorld\bin\Debug\BlocksWorld.exe.config
+c:\users\christianjavier\documents\visual studio 2012\Projects\BlocksWorld\BlocksWorld\bin\Debug\BlocksWorld.exe
+c:\users\christianjavier\documents\visual studio 2012\Projects\BlocksWorld\BlocksWorld\bin\Debug\BlocksWorld.pdb
+c:\users\christianjavier\documents\visual studio 2012\Projects\BlocksWorld\BlocksWorld\obj\Debug\BlocksWorld.csprojResolveAssemblyReference.cache
+c:\users\christianjavier\documents\visual studio 2012\Projects\BlocksWorld\BlocksWorld\obj\Debug\MainWindow.baml
+c:\users\christianjavier\documents\visual studio 2012\Projects\BlocksWorld\BlocksWorld\obj\Debug\MainWindow.g.cs
+c:\users\christianjavier\documents\visual studio 2012\Projects\BlocksWorld\BlocksWorld\obj\Debug\App.g.cs
+c:\users\christianjavier\documents\visual studio 2012\Projects\BlocksWorld\BlocksWorld\obj\Debug\BlocksWorld_MarkupCompile.cache
+c:\users\christianjavier\documents\visual studio 2012\Projects\BlocksWorld\BlocksWorld\obj\Debug\BlocksWorld.g.resources
+c:\users\christianjavier\documents\visual studio 2012\Projects\BlocksWorld\BlocksWorld\obj\Debug\BlocksWorld.Properties.Resources.resources
+c:\users\christianjavier\documents\visual studio 2012\Projects\BlocksWorld\BlocksWorld\obj\Debug\BlocksWorld.csproj.GenerateResource.Cache
+c:\users\christianjavier\documents\visual studio 2012\Projects\BlocksWorld\BlocksWorld\obj\Debug\BlocksWorld.exe
+c:\users\christianjavier\documents\visual studio 2012\Projects\BlocksWorld\BlocksWorld\obj\Debug\BlocksWorld.pdb
