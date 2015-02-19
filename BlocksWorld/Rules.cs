@@ -56,11 +56,12 @@ namespace BlocksWorld
         /// <summary>
         /// El brazo está desocupado
         /// </summary>
-        /// <param name="X">Bloque</param>
+        /// <param name="X">Entorno</param>
         /// <returns>Si el brazo está desocupado</returns>
-        public bool ArmEmpty(Label X)
+        public bool ArmEmpty(Grid X)
         {
-            if (X.IsVisible && (Grid.GetRow(X) == 1 && Grid.GetColumn(X) == 3))
+            var element = X.Children.Cast<UIElement>().Where(e => Grid.GetColumn(e) == 3 && Grid.GetRow(e) == 1);
+            if (X.IsVisible && element.Count() == 0)
                 return true;
             return false;
         }
