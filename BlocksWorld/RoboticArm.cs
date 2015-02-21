@@ -11,69 +11,94 @@ namespace BlocksWorld
     {
         private Grid initEnv { get; set; }
         private Grid curEnv { get; set; }
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="Environment">Entorno</param>
         public RoboticArm(Grid Environment)
         {
             this.initEnv = Environment;
             this.curEnv = Environment;
         }
-
+        /// <summary>
+        /// Apila un bloque con otro
+        /// </summary>
+        /// <param name="X">Bloque X</param>
+        /// <param name="Y">Bloque Y</param>
+        /// <returns>Se pudo efectuar la tarea</returns>
         public bool Stack(Label X, Label Y)
         {
             //Precondition
-            if (Clear(Y) && Holding(X))
+            if (this.Clear(Y, this.curEnv) && this.Holding(X))
             {
-
                 Grid.SetRow(X, Grid.GetRow(Y) - 1);
                 Grid.SetColumn(X, Grid.GetColumn(Y));
                 //Add
-                if (ArmEmpty(this.curEnv) && On(X, Y))
+                if (this.ArmEmpty(this.curEnv) && this.On(X, Y))
                 {
                     return true;
                 }
             }
             return false;
         }
-
-        public void Unstack(Label X, Label Y)
+        /// <summary>
+        /// Quita un bloque que se encontraba encima de otro.
+        /// </summary>
+        /// <param name="X">Bloque X</param>
+        /// <param name="Y">Bloque Y</param>
+        /// <returns>Se pudo efectuar la tarea</returns>
+        public bool Unstack(Label X, Label Y)
         {
             //Precondition
-            if (On(X, Y) && Clear(X) && ArmEmpty(this.curEnv))
+            if (this.On(X, Y) && this.Clear(X, this.curEnv) && this.ArmEmpty(this.curEnv))
             {
                 //Delete
-                if (On(X, Y) && ArmEmpty(this.curEnv))
+                if (this.On(X, Y) && this.ArmEmpty(this.curEnv))
                 {
                     //Add
-                    if (Holding(X) && Clear(Y))
+                    if (this.Holding(X) && this.Clear(Y, this.curEnv))
                     {
+                        X.Visibility = System.Windows.Visibility.Hidden;
+                        return true;
                     }
                 }
             }
+            return false;
         }
-
-        public void PickUp(Label X)
+        /// <summary>
+        /// El brazo carga un bloque
+        /// </summary>
+        /// <param name="X">Bloque X</param>
+        /// <returns>Si pudo realizar la acción</returns>
+        public bool PickUp(Label X)
         {
             //Precondition
-            if (Clear(X) && OnTable(X) && ArmEmpty(this.curEnv))
+            if (this.Clear(X, this.curEnv) && this.OnTable(X) && this.ArmEmpty(this.curEnv))
             {
                 //Delete
-                if (OnTable(X) && ArmEmpty(this.curEnv))
+                if (this.OnTable(X) && this.ArmEmpty(this.curEnv))
                 {
                     //Add
-                    if (!Holding(X))
+                    if (!this.Holding(X))
                     {
                         X.Visibility = System.Windows.Visibility.Visible;
                         Grid.SetColumn(X, 3);
                         Grid.SetRow(X, 1);
+                        return true;
                     }
                 }
             }
+            return false;
         }
-
-        public void PutDown(Label X)
+        /// <summary>
+        /// Deja el bloque en la mesa
+        /// </summary>
+        /// <param name="X">Bloque X</param>
+        /// <returns>Si pudo realizar la acción</returns>
+        public bool PutDown(Label X)
         {
             //Precondition
-            if (Holding(X))
+            if (this.Holding(X))
             {
                 //Delete
                 Grid.SetRow(X, 3);
@@ -83,10 +108,13 @@ namespace BlocksWorld
                     case "B": Grid.SetColumn(X, 2); break;
                     case "C": Grid.SetColumn(X, 3); break;
                 }
-                if (Clear(X) && OnTable(X) && ArmEmpty(this.curEnv))
+                //Add
+                if (this.Clear(X, this.curEnv) && this.OnTable(X) && this.ArmEmpty(this.curEnv))
                 {
+                    return true;
                 }
             }
+            return false;
         }
     }
 }
