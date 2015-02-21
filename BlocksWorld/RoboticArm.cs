@@ -29,10 +29,10 @@ namespace BlocksWorld
         public bool Stack(Label X, Label Y)
         {
             //Precondition
-            if (this.Clear(Y, this.curEnv) && this.Holding(X))
+            if (this.Clear(X, this.curEnv) && this.Holding(Y))
             {
-                Grid.SetRow(X, Grid.GetRow(Y) - 1);
-                Grid.SetColumn(X, Grid.GetColumn(Y));
+                Grid.SetRow(Y, Grid.GetRow(X) - 1);
+                Grid.SetColumn(Y, Grid.GetColumn(X));
                 //Add
                 if (this.ArmEmpty(this.curEnv) && this.On(X, Y))
                 {
@@ -50,12 +50,14 @@ namespace BlocksWorld
         public bool Unstack(Label X, Label Y)
         {
             //Precondition
-            if (this.On(X, Y) && this.Clear(X, this.curEnv) && this.ArmEmpty(this.curEnv))
+            if (this.On(X, Y) && this.Clear(Y, this.curEnv) && this.ArmEmpty(this.curEnv))
             {
                 //Delete
                 if (this.On(X, Y) && this.ArmEmpty(this.curEnv))
                 {
                     //Add
+                    Grid.SetColumn(Y, 3);
+                    Grid.SetRow(Y, 1);
                     if (this.Holding(X) && this.Clear(Y, this.curEnv))
                     {
                         X.Visibility = System.Windows.Visibility.Hidden;

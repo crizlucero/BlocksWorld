@@ -18,7 +18,7 @@ namespace BlocksWorld
         /// <returns>Si el bloque 1 está encima del bloque 2</returns>
         protected bool On(Label X, Label Y)
         {
-            if (Grid.GetRow(X) == (Grid.GetRow(Y) - 1) && Grid.GetColumn(X) == Grid.GetColumn(Y)) return true;
+            if (Grid.GetRow(X) == (Grid.GetRow(Y) + 1) && Grid.GetColumn(X) == Grid.GetColumn(Y)) return true;
             return false;
         }
         /// <summary>
@@ -39,7 +39,8 @@ namespace BlocksWorld
         /// <returns>Si existe algo o no</returns>
         protected bool Clear(Label X, Grid E)
         {
-            if (E.Children.Cast<UIElement>().Where(e => Grid.GetColumn(e) == Grid.GetColumn(X) && Grid.GetRow(e) == Grid.GetRow(X) - 1).Count() == 0) return true;
+            var el = E.Children.Cast<UIElement>().Where(e => Grid.GetColumn(e) == Grid.GetColumn(X) && Grid.GetRow(e) == Grid.GetRow(X) - 1 && e is Label);
+            if (el.Count() == 0) return true;
             return false;
         }
         /// <summary>
@@ -59,7 +60,8 @@ namespace BlocksWorld
         /// <returns>Si el brazo está desocupado</returns>
         protected bool ArmEmpty(Grid X)
         {
-            if (X.Children.Cast<UIElement>().Where(e => Grid.GetColumn(e) == 3 && Grid.GetRow(e) == 1).Count() == 0) return true;
+            var el = X.Children.Cast<UIElement>().Where(e => Grid.GetColumn(e) == 3 && Grid.GetRow(e) == 1 && e is Label);
+            if (el.Count() == 0) return true;
             return false;
         }
     }
