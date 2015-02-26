@@ -53,6 +53,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Belief.cs" />
+    <Compile Include="Desire.cs" />
+    <Compile Include="Intention.cs" />
     <Compile Include="RoboticArm.cs" />
     <Compile Include="Rules.cs" />
     <Page Include="MainWindow.xaml">

@@ -26,7 +26,7 @@
         <Rectangle Grid.Row="4" Fill="Black" Width="50"/>
         <Rectangle Grid.Row="4" Grid.Column="4" Fill="Black" Width="50"/>
         <Label Name="BlockA" Content="A" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="1" BorderThickness="10" BorderBrush="BurlyWood"/>
-        <Label Name="BlockB" Content="B" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="2" BorderThickness="10" BorderBrush="BurlyWood"/>
+        <Label Name="BlockB" Content="B" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="2" Grid.Column="1" BorderThickness="10" BorderBrush="BurlyWood"/>
         <Label Name="BlockC" Content="C" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="3" BorderThickness="10" BorderBrush="BurlyWood"/>
         <Button Name="Stack" Content="Stack" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="Stack_Click"/>
         <Button Name="Unstack" Content="Unstack" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Grid.Column="1" Click="Unstack_Click"/>

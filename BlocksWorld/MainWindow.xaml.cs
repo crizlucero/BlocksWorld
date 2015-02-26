@@ -29,22 +29,22 @@ namespace BlocksWorld
 
         private void Stack_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine(this.ra.Stack(this.BlockA,this.BlockB));
+        //    Console.WriteLine(this.ra.Stack(this.BlockA,this.BlockB));
         }
 
         private void Unstack_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine(this.ra.Unstack(this.BlockA,this.BlockB));
+          //  Console.WriteLine(this.ra.Unstack(this.BlockA,this.BlockB));
         }
 
         private void Pickup_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine(this.ra.PickUp(this.BlockB));
+            //Console.WriteLine(this.ra.PickUp(this.BlockB));
         }
 
         private void Putdown_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine(this.ra.PutDown(this.BlockB));
+            //Console.WriteLine(this.ra.PutDown(this.BlockB));
         }
 
     }
