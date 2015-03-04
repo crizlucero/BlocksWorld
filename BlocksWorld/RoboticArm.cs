@@ -31,7 +31,21 @@ namespace BlocksWorld
         public void DoAction()
         {
             bool flag = true;
-            while(flag){
+            List<List<string>> temp = new List<List<string>>();
+            while (flag)
+            {
+                foreach (List<string> list in this.Intentions.Goals)
+                {
+                    if (this.Believes.b0.Remove(new List<string> { list[0], list[1] }))
+                        temp.Add(list);
+                }
+                foreach (List<string> list in temp)
+                    this.Intentions.Goals.Remove(new List<string> { list[0], list[1] });
+                if (this.Believes.b0.Count != 0)
+                {
+                    this.Believes.getBelieves();
+                }
+                else flag = false;
 
             }
         }

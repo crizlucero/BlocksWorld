@@ -27,25 +27,9 @@ namespace BlocksWorld
             this.ra = new RoboticArm(this.Environment);
         }
 
-        private void Stack_Click(object sender, RoutedEventArgs e)
+        private void DoAction_Click(object sender, RoutedEventArgs e)
         {
-        //    Console.WriteLine(this.ra.Stack(this.BlockA,this.BlockB));
+            this.ra.DoAction();
         }
-
-        private void Unstack_Click(object sender, RoutedEventArgs e)
-        {
-          //  Console.WriteLine(this.ra.Unstack(this.BlockA,this.BlockB));
-        }
-
-        private void Pickup_Click(object sender, RoutedEventArgs e)
-        {
-            //Console.WriteLine(this.ra.PickUp(this.BlockB));
-        }
-
-        private void Putdown_Click(object sender, RoutedEventArgs e)
-        {
-            //Console.WriteLine(this.ra.PutDown(this.BlockB));
-        }
-
     }
 }

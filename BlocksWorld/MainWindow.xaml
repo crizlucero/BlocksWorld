@@ -28,9 +28,6 @@
         <Label Name="BlockA" Content="A" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="1" BorderThickness="10" BorderBrush="BurlyWood"/>
         <Label Name="BlockB" Content="B" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="2" Grid.Column="1" BorderThickness="10" BorderBrush="BurlyWood"/>
         <Label Name="BlockC" Content="C" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="3" BorderThickness="10" BorderBrush="BurlyWood"/>
-        <Button Name="Stack" Content="Stack" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="Stack_Click"/>
-        <Button Name="Unstack" Content="Unstack" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Grid.Column="1" Click="Unstack_Click"/>
-        <Button Name="Pickup" Content="Pickup" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Grid.Row="1" Click="Pickup_Click"/>
-        <Button Name="Putdown" Content="Putdown" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Grid.Column="1" Grid.Row="1" Click="Putdown_Click"/>
+        <Button Name="DoAction" Content="Go" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="DoAction_Click"/>
     </Grid>
 </Window>

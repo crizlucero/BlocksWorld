@@ -10,15 +10,14 @@ namespace BlocksWorld
     class Intention : Rules
     {
         private Grid curEnv { get; set; }
+        public List<List<string>> Goals = new List<List<string>>();
         public Intention(Grid Environment)
         {
             this.curEnv = Environment;
-        }
+            this.Goals.Add(new List<string> { "OnTable", "A" });
+            this.Goals.Add(new List<string> { "OnTable", "B" });
+            this.Goals.Add(new List<string> { "OnTable", "C" });
 
-        private bool Goal(Label X, Label Y, Label Z)
-        {
-            if (OnTable(X) && OnTable(Y) && OnTable(Z)) return true;
-            return false;
         }
         /// <summary>
         /// Apila un bloque con otro

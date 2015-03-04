@@ -11,7 +11,7 @@ namespace BlocksWorld
     class Belief : Rules
     {
         private Grid curEnv { get; set; }
-        private List<List<string>> b0 = new List<List<string>>();
+        public List<List<string>> b0 = new List<List<string>>();
         public Belief(Grid Environment)
         {
             this.curEnv = Environment;
