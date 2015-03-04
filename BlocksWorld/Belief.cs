@@ -21,6 +21,7 @@ namespace BlocksWorld
         public void getBelieves()
         {
             bool flag = true;
+            this.b0.Clear();
             foreach (UIElement child in this.curEnv.Children)
             {
                 if (child is Label)

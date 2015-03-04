@@ -25,7 +25,7 @@ namespace BlocksWorld
         /// <param name="X">Bloque X</param>
         /// <param name="Y">Bloque Y</param>
         /// <returns>Se pudo efectuar la tarea</returns>
-        private bool Stack(Label X, Label Y)
+        public bool Stack(Label X, Label Y)
         {
             //Precondition
             if (this.Clear(X, this.curEnv) && this.Holding(Y))
@@ -47,7 +47,7 @@ namespace BlocksWorld
         /// <param name="X">Bloque X</param>
         /// <param name="Y">Bloque Y</param>
         /// <returns>Se pudo efectuar la tarea</returns>
-        private bool Unstack(Label X, Label Y)
+        public bool Unstack(Label X, Label Y)
         {
             //Precondition
             if (this.On(X, Y) && this.Clear(Y, this.curEnv) && this.ArmEmpty(this.curEnv))
@@ -72,13 +72,13 @@ namespace BlocksWorld
         /// </summary>
         /// <param name="X">Bloque X</param>
         /// <returns>Si pudo realizar la acción</returns>
-        private bool PickUp(Label X)
+        public bool PickUp(Label X)
         {
             //Precondition
-            if (this.Clear(X, this.curEnv) && this.OnTable(X) && this.ArmEmpty(this.curEnv))
+            if (this.Clear(X, this.curEnv) && (this.OnTable(X) || this.On(X)) && this.ArmEmpty(this.curEnv))
             {
                 //Delete
-                if (this.OnTable(X) && this.ArmEmpty(this.curEnv))
+                if ((this.OnTable(X) || this.On(X)) && this.ArmEmpty(this.curEnv))
                 {
                     //Add
                     if (!this.Holding(X))
@@ -97,7 +97,7 @@ namespace BlocksWorld
         /// </summary>
         /// <param name="X">Bloque X</param>
         /// <returns>Si pudo realizar la acción</returns>
-        private bool PutDown(Label X)
+        public bool PutDown(Label X)
         {
             //Precondition
             if (this.Holding(X))
