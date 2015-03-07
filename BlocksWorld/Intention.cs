@@ -30,7 +30,6 @@ namespace BlocksWorld
             //Precondition
             if (this.Clear(X, this.curEnv) && this.Holding(Y))
             {
-                //Delete
                 Grid.SetRow(Y, Grid.GetRow(X) - 1);
                 Grid.SetColumn(Y, Grid.GetColumn(X));
                 //Add
@@ -77,17 +76,13 @@ namespace BlocksWorld
             //Precondition
             if (this.Clear(X, this.curEnv) && (this.OnTable(X) || this.On(X)) && this.ArmEmpty(this.curEnv))
             {
-                //Delete
-                if ((this.OnTable(X) || this.On(X)) && this.ArmEmpty(this.curEnv))
+                //Add
+                if (!this.Holding(X))
                 {
-                    //Add
-                    if (!this.Holding(X))
-                    {
-                        X.Visibility = System.Windows.Visibility.Visible;
-                        Grid.SetColumn(X, 3);
-                        Grid.SetRow(X, 1);
-                        return true;
-                    }
+                    X.Visibility = System.Windows.Visibility.Visible;
+                    Grid.SetColumn(X, 3);
+                    Grid.SetRow(X, 1);
+                    return true;
                 }
             }
             return false;
@@ -102,7 +97,6 @@ namespace BlocksWorld
             //Precondition
             if (this.Holding(X))
             {
-                //Delete
                 Grid.SetRow(X, 3);
                 switch (X.Content.ToString())
                 {
