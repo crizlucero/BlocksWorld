@@ -21,6 +21,11 @@ namespace BlocksWorld
             if (Grid.GetRow(X) == (Grid.GetRow(Y) + 1) && Grid.GetColumn(X) == Grid.GetColumn(Y)) return true;
             return false;
         }
+        /// <summary>
+        /// El bloque está encima de otro
+        /// </summary>
+        /// <param name="X">Bloque 1</param>
+        /// <returns></returns>
         protected bool On(Label X)
         {
             if (Grid.GetRow(X) == 2 && Grid.GetColumn(X) == 1) return true;
